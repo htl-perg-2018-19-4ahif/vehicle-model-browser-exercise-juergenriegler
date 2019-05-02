@@ -1,0 +1,52 @@
+
+year: 
+<select [(ngModel)]="selectedYear">
+  <option [value]="null">---</option>
+  <option *ngFor="let year of years | async" [value]="year">
+    {{ year }} 
+  </option>
+</select>
+<br>
+
+make:
+<select [(ngModel)]="selectedMake">
+  <option [value]="null">---</option>
+  <option *ngFor="let make of makes | async" [value]="make">
+    {{ make }} 
+  </option>
+</select>
+<br>
+
+
+
+<button (click)="refreshModels()">refresh</button>
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>
+        year
+      </th>
+      <th>
+        make
+      </th>
+      <th>
+        model
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let model of models | async">
+      <td>
+        {{ model.year }}
+      </td>
+      <td>
+        {{ model.make }}
+      </td>
+      <td>
+        {{ model.model }}
+      </td>
+    </tr>
+  </tbody>
+</table>

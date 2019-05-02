@@ -1,0 +1,7 @@
+<table>
+  <tr>
+    <td *ngFor="let me of menuEntries">
+      <a [routerLink]="me.url">{{ me.name }}</a>
+    </td>
+  </tr>
+</table>
